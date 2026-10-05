@@ -707,3 +707,51 @@ footer {
     }
 
 }
+
+/* Light Mode */
+body.light-mode {
+    background: #f5f7fa;
+    color: #111827;
+}
+
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .nav-links a {
+    color: #111827;
+}
+
+body.light-mode .hero-text h1 {
+    color: #111827;
+}
+
+body.light-mode .hero-text p {
+    color: #4b5563;
+}
+
+body.light-mode section {
+    background: #f5f7fa;
+}
+
+body.light-mode .status-card,
+body.light-mode .project-card,
+body.light-mode .skill-card {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+body.light-mode .status-card p,
+body.light-mode .project-card p,
+body.light-mode .skill-card p {
+    color: #4b5563;
+}
+
+body.light-mode .timeline-content {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+body.light-mode footer {
+    background: #e5e7eb;
+}
