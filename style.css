@@ -755,3 +755,11 @@ body.light-mode .timeline-content {
 body.light-mode footer {
     background: #e5e7eb;
 }
+/* Profile photo */
+.profile-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
