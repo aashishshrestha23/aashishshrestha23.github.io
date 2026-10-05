@@ -2,7 +2,10 @@ const themeButton = document.getElementById("theme-toggle");
 
 themeButton.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
-    playClickSound();
+
+    if (soundEnabled) {
+        playClickSound();
+    }
 });
 // Futuristic UI click sound
 function playClickSound() {
@@ -30,3 +33,17 @@ function playClickSound() {
     oscillator.start();
     oscillator.stop(audioContext.currentTime + 0.08);
 }
+// Sound toggle
+let soundEnabled = true;
+
+const soundButton = document.getElementById("sound-toggle");
+
+soundButton.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
+
+    soundButton.textContent = soundEnabled ? "🔊" : "🔇";
+
+    if (soundEnabled) {
+        playClickSound();
+    }
+});
