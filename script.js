@@ -59,3 +59,17 @@ projectButton.addEventListener("click", () => {
 closeProject.addEventListener("click", () => {
     projectModal.style.display = "none";
 });
+
+// Close when clicking outside the modal
+projectModal.addEventListener("click", (event) => {
+    if (event.target === projectModal) {
+        projectModal.style.display = "none";
+    }
+});
+
+// Close with Escape key
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        projectModal.style.display = "none";
+    }
+});
