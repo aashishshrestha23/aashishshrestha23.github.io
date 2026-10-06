@@ -910,3 +910,22 @@ body.light-mode .project-flow {
     color: #0891b2;
     border-color: #0891b2;
 }
+
+/* Project modal animation */
+.project-modal {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-modal-content {
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+}
+
+.project-modal[style*="display: block"] {
+    opacity: 1;
+}
+
+.project-modal[style*="display: block"] .project-modal-content {
+    transform: translateY(0);
+}
