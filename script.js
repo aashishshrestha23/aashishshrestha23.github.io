@@ -47,3 +47,15 @@ soundButton.addEventListener("click", () => {
         playClickSound();
     }
 });
+// Project details modal
+const projectButton = document.getElementById("project-btn");
+const projectModal = document.getElementById("project-modal");
+const closeProject = document.getElementById("close-project");
+
+projectButton.addEventListener("click", () => {
+    projectModal.style.display = "block";
+});
+
+closeProject.addEventListener("click", () => {
+    projectModal.style.display = "none";
+});
