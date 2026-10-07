@@ -929,3 +929,7 @@ body.light-mode .project-flow {
 .project-modal[style*="display: block"] .project-modal-content {
     transform: translateY(0);
 }
+
+html {
+    scroll-behavior: smooth;
+}
