@@ -1,5 +1,6 @@
 const root = document.documentElement;
 const themeButton = document.querySelector(".theme-toggle");
+const soundButton = document.querySelector(".sound-toggle");
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const projectDialog = document.querySelector("#project-dialog");
@@ -16,6 +17,59 @@ setTheme(root.dataset.theme === "dark" ? "dark" : "light");
 
 themeButton.addEventListener("click", () => {
   setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+});
+
+let soundEnabled = false;
+let audioContext;
+
+try {
+  soundEnabled = localStorage.getItem("portfolio-sound") === "on";
+} catch (_) {}
+
+function updateSoundButton() {
+  soundButton.setAttribute("aria-pressed", String(soundEnabled));
+  soundButton.setAttribute("aria-label", soundEnabled ? "Turn interface sounds off" : "Turn interface sounds on");
+  soundButton.title = soundEnabled ? "Interface sounds on" : "Interface sounds off";
+  soundButton.innerHTML = soundEnabled ? '<span aria-hidden="true">♪</span>' : '<span aria-hidden="true">♩</span>';
+}
+
+function playClickSound() {
+  if (!soundEnabled) return;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextClass) return;
+
+  try {
+    audioContext ||= new AudioContextClass();
+    if (audioContext.state === "suspended") audioContext.resume();
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const now = audioContext.currentTime;
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(620, now);
+    oscillator.frequency.exponentialRampToValueAtTime(470, now + 0.055);
+    gain.gain.setValueAtTime(0.018, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.06);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start(now);
+    oscillator.stop(now + 0.06);
+  } catch (_) {}
+}
+
+updateSoundButton();
+soundButton.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  try { localStorage.setItem("portfolio-sound", soundEnabled ? "on" : "off"); } catch (_) {}
+  updateSoundButton();
+  if (soundEnabled) playClickSound();
+});
+
+document.addEventListener("click", event => {
+  if (event.target.closest(".sound-toggle")) return;
+  if (event.target.closest("button, a")) playClickSound();
 });
 
 function closeMenu() {
