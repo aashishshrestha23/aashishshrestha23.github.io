@@ -307,3 +307,36 @@ h1 em, h2 em, h3 em { color: var(--accent); font-style: normal; }
   .workbench-card { min-height: 220px; padding: 22px; }
   .workbench-mark { margin: 22px 0 13px; }
 }
+
+
+/* Personal philosophy quote section */
+.philosophy-section { padding-top: 105px; padding-bottom: 105px; }
+.philosophy-inner {
+  max-width: 850px; margin: 0 auto; padding: clamp(30px, 6vw, 68px);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.philosophy-inner .eyebrow { margin-bottom: 30px; }
+.philosophy-inner blockquote { margin: 0; }
+.quote-mark {
+  display: block; height: 42px; color: var(--accent);
+  font-family: var(--serif); font-size: 76px; line-height: 1;
+}
+.philosophy-inner blockquote p {
+  max-width: 760px; margin: 8px auto 22px;
+  font-family: var(--serif); font-size: clamp(28px, 4.2vw, 47px);
+  line-height: 1.25; letter-spacing: -.025em;
+}
+.philosophy-inner cite {
+  color: var(--accent-dark); font-size: 11px; font-style: normal;
+  font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+.philosophy-note {
+  max-width: 440px; margin: 25px auto 0;
+  color: var(--muted); font-size: 12px; line-height: 1.8;
+}
+@media (max-width: 680px) {
+  .philosophy-section { padding-top: 75px; padding-bottom: 75px; }
+  .philosophy-inner { padding: 28px 18px; }
+  .philosophy-inner blockquote p { font-size: clamp(27px, 8vw, 36px); }
+}
