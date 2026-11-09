@@ -1,355 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aashish Shrestha | Computing & AI</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Aashish Shrestha — Computing and AI student exploring robotics, intelligent systems, IoT and practical technology projects.">
+  <meta property="og:title" content="Aashish Shrestha | Computing, AI & Robotics">
+  <meta property="og:description" content="Curious mind. Builder's mindset. Explore my learning journey and projects.">
+  <meta property="og:type" content="website">
+  <title>Aashish Shrestha — Computing, AI & Robotics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      const saved = localStorage.getItem("portfolio-theme");
+      if (saved === "dark") document.documentElement.dataset.theme = "dark";
+    } catch (_) {}
+  </script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#home" class="logo">AASHISH<span>.</span></a>
-
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <button id="theme-toggle">☀️</button>
-        <button id="sound-toggle">🔊</button>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="wordmark" href="#home" aria-label="Aashish Shrestha home">AASHISH<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle colour theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
+      </button>
     </nav>
+  </header>
 
-
-    <!-- HOME -->
-    <section id="home">
-
-        <div class="home-content">
-
-            <p>COMPUTING & AI STUDENT</p>
-
-            <h1>
-                Hi, I'm
-                <span>Aashish Shrestha</span>
-            </h1>
-
-            <h2>Learning. Building. Exploring.</h2>
-
-            <p>
-                I'm a Computing & AI student with a strong interest
-                in robotics, IoT, programming and technology.
-            </p>
-
-            <a href="#projects">
-                View My Projects →
-            </a>
-
+  <main id="main">
+    <section class="hero shell" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> COMPUTING · AI · ROBOTICS · IoT</p>
+        <h1>Curious mind.<br><em>Builder’s mindset.</em></h1>
+        <p class="hero-intro">Hi, I’m <strong>Aashish Shrestha</strong> — a Computing &amp; AI student interested in robotics, intelligent systems and building things that work in the real world.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#about">More about me <span aria-hidden="true">↓</span></a>
         </div>
-
-
-        <!-- Profile photo will be added later -->
-       <div class="profile-placeholder">
-    <img src="aashishpfp.jpeg" alt="Aashish Shrestha">
-</div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-
-        <p>01 — ABOUT ME</p>
-
-        <h2>Who I am</h2>
-
-        <p>
-            I am currently studying BSc Hons Computing with AI
-            at Softwarica. I am building my foundation in
-            programming, computing and artificial intelligence.
-        </p>
-
-        <p>
-            I also enjoy robotics, electronics, Arduino,
-            IoT projects and turning ideas into real things.
-        </p>
-
-    </section>
-
-
-    <!-- CURRENT STATUS -->
-    <section id="status">
-
-        <p>CURRENT STATUS</p>
-
-        <h2>What I'm doing now</h2>
-
-        <div class="status-container">
-
-            <div>
-                <h3>🎓 Studying</h3>
-                <p>BSc Hons Computing with AI</p>
-            </div>
-
-            <div>
-                <h3>💻 Learning</h3>
-                <p>Python & Programming Concepts</p>
-            </div>
-
-            <div>
-                <h3>🤖 Exploring</h3>
-                <p>Robotics & IoT</p>
-            </div>
-
+        <div class="hero-note"><span class="status-dot"></span> Learning by building, one project at a time</div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-frame">
+          <img src="aashishpfp.jpeg" alt="Portrait of Aashish Shrestha" fetchpriority="high">
+          <span class="portrait-index">01 / THE BUILDER</span>
         </div>
-
+        <span class="visual-coordinate">27°43′N&nbsp; 85°19′E</span>
+        <span class="visual-cross cross-one" aria-hidden="true">+</span>
+        <span class="visual-cross cross-two" aria-hidden="true">+</span>
+      </div>
+      <div class="hero-bottom"><span>PORTFOLIO — 2026</span><span>SCROLL TO EXPLORE ↓</span></div>
     </section>
 
-
-    <!-- PROJECTS -->
-    <section id="projects">
-
-        <p>02 — PROJECTS</p>
-
-        <h2>Things I've Built</h2>
-
-        <p>
-            Projects I have built while learning and experimenting
-            with technology.
-        </p>
-
-
-       <!-- Bluetooth Car -->
-<div class="project-card">
-
-    <div class="project-image">
-        <img src="images/projects/bluetooth-car/project%202.jpeg"
-             alt="Bluetooth Controlled Car">
-    </div>
-
-    <div class="project-info">
-
-        <p>ROBOTICS · EMBEDDED SYSTEM · TEAM PROJECT</p>
-
-        <h3>Bluetooth Controlled Car</h3>
-
-        <p>
-            A smartphone-controlled robotic car built as a team project
-            using Arduino Uno, HC-05 Bluetooth communication, an L298N
-            motor driver, DC motors, and a rechargeable battery system.
-        </p>
-
-        <div class="tags">
-            <span>Arduino Uno</span>
-            <span>HC-05</span>
-            <span>L298N</span>
-            <span>Robotics</span>
+    <section class="section shell about-section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">01 — A LITTLE ABOUT ME</p>
+        <h2>Learning how things work.<br><em>Then making them work.</em></h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-lead">I’m currently studying BSc (Hons) Computing with AI at Softwarica College. I’m building my foundations in programming, mathematics, computing and artificial intelligence.</p>
+        <div class="about-detail">
+          <p>I enjoy exploring the space where software meets the physical world — from small electronics experiments to robotics and connected devices. I’m still early in my journey, and I see every project as a chance to learn something properly.</p>
+          <p>This portfolio is a record of that process: what I’m learning, what I’ve built, what challenged me and what I want to explore next.</p>
+          <a class="inline-link" href="#journey">See my learning journey <span aria-hidden="true">↗</span></a>
         </div>
-
-       <button id="project-btn">
-    Explore Project →
-</button>
-    </div>
-
-</div>
-
+      </div>
+      <div class="principles">
+        <div><span>01</span><strong>Stay curious</strong><p>Ask questions and understand the fundamentals.</p></div>
+        <div><span>02</span><strong>Build to learn</strong><p>Turn ideas into small, testable experiments.</p></div>
+        <div><span>03</span><strong>Keep improving</strong><p>Learn from mistakes and make the next version better.</p></div>
+      </div>
     </section>
 
+    <section class="section interests-section" id="interests">
+      <div class="shell">
+        <div class="section-heading section-heading-row">
+          <div><p class="eyebrow">02 — WHAT EXCITES ME</p><h2>Areas I’m <em>exploring.</em></h2></div>
+          <p class="section-aside">A few fields I’m curious about — and want to understand through study and hands-on work.</p>
+        </div>
+        <div class="interest-grid">
+          <article class="interest-card"><span class="card-number">01 / HARDWARE</span><div class="interest-symbol" aria-hidden="true">⌁</div><h3>Robotics &amp; intelligent systems</h3><p>How machines sense, make decisions and interact with the physical world.</p></article>
+          <article class="interest-card"><span class="card-number">02 / CONNECTED</span><div class="interest-symbol" aria-hidden="true">⌘</div><h3>IoT &amp; embedded systems</h3><p>Microcontrollers, sensors and devices that collect information and respond.</p></article>
+          <article class="interest-card"><span class="card-number">03 / INTELLIGENCE</span><div class="interest-symbol" aria-hidden="true">✳</div><h3>AI &amp; machine learning</h3><p>Learning how intelligent software finds patterns and solves useful problems.</p></article>
+          <article class="interest-card"><span class="card-number">04 / SOFTWARE</span><div class="interest-symbol" aria-hidden="true">⌗</div><h3>Software development</h3><p>Writing clear, reliable software and learning how complete systems fit together.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
+    <section class="section shell projects-section" id="projects">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">03 — SELECTED WORK</p><h2>Ideas made <em>tangible.</em></h2></div>
+        <p class="section-aside">A growing collection of experiments and projects. More will be added as I build and learn.</p>
+      </div>
+      <article class="featured-project">
+        <button class="project-image-button" type="button" data-open-project aria-label="Open Bluetooth controlled car project details">
+          <img src="images/projects/bluetooth-car/project%202.jpeg" alt="Bluetooth-controlled car built as a team project" loading="lazy">
+          <span class="image-open">VIEW CASE STUDY ↗</span>
+        </button>
+        <div class="project-copy">
+          <div class="project-meta"><span>FEATURED PROJECT</span><span>TEAM PROJECT · GRADE 12</span></div>
+          <h3>Bluetooth<br><em>controlled car.</em></h3>
+          <p>A smartphone-controlled robotic car built with a team, bringing together Arduino programming, wireless communication and motor control.</p>
+          <div class="tag-list"><span>Arduino Uno</span><span>HC-05</span><span>L298N</span><span>Electronics</span></div>
+          <button class="project-open-link" type="button" data-open-project>Explore the project <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
+      <p class="project-footnote"><span>NOTE</span> This was a collaborative project. The case study describes the system and team build; individual contributions will be added accurately after review.</p>
+    </section>
 
-        <p>03 — EDUCATION</p>
-
-        <h2>My Academic Journey</h2>
-
+    <section class="section journey-section" id="journey">
+      <div class="shell journey-grid">
+        <div class="section-heading"><p class="eyebrow">04 — THE JOURNEY SO FAR</p><h2>Building my<br><em>foundations.</em></h2><p class="journey-intro">I’m at the beginning of my computing journey. Here’s where I’m learning and what I’m currently working on.</p></div>
         <div class="timeline">
-
-            <div>
-                <span>2026 — Present</span>
-
-                <h3>BSc Hons Computing with AI</h3>
-
-                <p>Softwarica College</p>
-            </div>
-
-            <div>
-                <span>Completed</span>
-
-                <h3>Higher Secondary Education</h3>
-
-                <p>Science / Computer Science</p>
-            </div>
-
+          <article class="timeline-item"><span class="timeline-date">2026 — PRESENT</span><div><h3>BSc (Hons) Computing with AI</h3><p class="timeline-place">Softwarica College</p><p>Developing foundations in programming, computing, mathematics and artificial intelligence.</p></div></article>
+          <article class="timeline-item"><span class="timeline-date">CURRENT FOCUS</span><div><h3>Programming &amp; computing fundamentals</h3><p class="timeline-place">Learning in progress</p><p>Practising Python, problem-solving and the concepts behind how computer programs work.</p></div></article>
+          <article class="timeline-item"><span class="timeline-date">EARLIER PROJECT</span><div><h3>Bluetooth-controlled car</h3><p class="timeline-place">Team project · Grade 12</p><p>An early hands-on introduction to Arduino, electronics and wireless control.</p></div></article>
         </div>
-
+      </div>
     </section>
 
-
-    <!-- LEARNING -->
-    <section id="learning">
-
-        <p>04 — CURRENTLY LEARNING</p>
-
-        <h2>My Skills & Interests</h2>
-
-        <div class="skills">
-
-            <div>
-                🐍
-                <h3>Python</h3>
-            </div>
-
-            <div>
-                🤖
-                <h3>Robotics</h3>
-            </div>
-
-            <div>
-                🌐
-                <h3>IoT</h3>
-            </div>
-
-            <div>
-                🧠
-                <h3>Artificial Intelligence</h3>
-            </div>
-
-        </div>
-
+    <section class="section shell learning-section" id="learning">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">05 — CURRENTLY LEARNING</p><h2>Skills in <em>progress.</em></h2></div>
+        <p class="section-aside">I prefer to be honest about what I’m learning rather than list tools as expertise before I’ve earned it.</p>
+      </div>
+      <div class="learning-list">
+        <div><span>01</span><strong>Python &amp; programming concepts</strong><small>FOUNDATIONS</small></div>
+        <div><span>02</span><strong>Mathematics for computing</strong><small>FOUNDATIONS</small></div>
+        <div><span>03</span><strong>Electronics &amp; Arduino</strong><small>HANDS-ON EXPLORATION</small></div>
+        <div><span>04</span><strong>Artificial intelligence</strong><small>ACADEMIC INTEREST</small></div>
+      </div>
     </section>
 
+    <section class="contact-section" id="contact">
+      <div class="shell contact-inner">
+        <p class="eyebrow">06 — GET IN TOUCH</p>
+        <h2>Have an idea?<br><em>Let’s connect.</em></h2>
+        <p>I’m always interested in learning, technology and thoughtful projects. Feel free to reach out.</p>
+        <div class="contact-actions">
+          <a class="button button-light" href="mailto:aashishshrestha0021@gmail.com">Send me an email <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/aashishshrestha23" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/aashish-shrestha-060551368/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+        <div class="contact-bottom"><span>KATHMANDU, NEPAL</span><span>OPEN TO LEARNING &amp; COLLABORATION</span></div>
+      </div>
+    </section>
+  </main>
 
-    <!-- CONTACT -->
-   <section id="contact">
+  <footer class="site-footer shell"><a class="wordmark" href="#home">AASHISH<span>.</span></a><p>Built with curiosity and a little bit of code.</p><span>© <span id="year">2026</span> Aashish Shrestha</span></footer>
 
-    <p>05 — CONNECT</p>
-
-    <h2>Let's Connect</h2>
-
-    <p>
-        Interested in technology, projects and learning?
-        Feel free to connect with me.
-    </p>
-
-    <div class="contact-links">
-
-        <a href="mailto:aashishshrestha0021@gmail.com">
-            📧 Email
-        </a>
-
-        <a href="https://github.com/aashishshrestha23"
-           target="_blank">
-            GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/aashish-shrestha-060551368/"
-           target="_blank">
-            LinkedIn
-        </a>
-
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-top"><p class="eyebrow">PROJECT CASE STUDY · TEAM BUILD</p><button class="icon-button" type="button" data-close-dialog aria-label="Close project details">✕</button></div>
+      <h2 id="dialog-title">Bluetooth controlled <em>car.</em></h2>
+      <p class="dialog-lead">A smartphone-controlled robotic car developed as a team project in Grade 12 at Grammar College.</p>
+      <div class="dialog-gallery">
+        <button type="button" class="gallery-image" data-lightbox="images/projects/bluetooth-car/project%202.jpeg" aria-label="Enlarge project photograph"><img src="images/projects/bluetooth-car/project%202.jpeg" alt="Bluetooth car project photograph" loading="lazy"></button>
+        <button type="button" class="gallery-image" data-lightbox="images/projects/bluetooth-car/project%203.jpeg" aria-label="Enlarge second project photograph"><img src="images/projects/bluetooth-car/project%203.jpeg" alt="Second view of the Bluetooth car" loading="lazy"></button>
+      </div>
+      <div class="dialog-columns">
+        <div><p class="eyebrow">THE IDEA</p><p>The goal was to control a small robotic car from a smartphone, using a wireless connection and an Arduino-based control system.</p></div>
+        <div><p class="eyebrow">COMPONENTS</p><div class="tag-list"><span>Arduino Uno</span><span>HC-05 Bluetooth</span><span>L298N motor driver</span><span>DC motors</span><span>HW-882 BMS</span><span>18650 Li-ion battery</span><span>LEDs &amp; resistors</span></div></div>
+      </div>
+      <div class="system-flow"><span>SMARTPHONE</span><b>→</b><span>HC-05</span><b>→</b><span>ARDUINO UNO</span><b>→</b><span>L298N</span><b>→</b><span>MOTORS</span></div>
+      <h3>How it works</h3>
+      <p>Commands are sent from a smartphone through the HC-05 Bluetooth module to the Arduino Uno. The Arduino processes the commands and controls the L298N motor driver, which drives the DC motors.</p>
+      <h3>Project media</h3>
+      <video class="project-video" controls preload="metadata" playsinline>
+        <source src="videos/bluetooth-car/project%20vdo%201.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+      <button class="diagram-button" type="button" data-lightbox="images/projects/bluetooth-car/circuit%20diagram.png"><img src="images/projects/bluetooth-car/circuit%20diagram.png" alt="Bluetooth car circuit diagram" loading="lazy"><span>View circuit diagram ↗</span></button>
+      <div class="dialog-columns learning-notes">
+        <div><h3>What we learned</h3><p>The project introduced us to wireless communication, Arduino programming, motor control, basic electronics and connecting separate components into one working system.</p></div>
+        <div><h3>What could come next</h3><p>Possible future extensions include sensor-based obstacle detection, feedback from the environment and more autonomous behaviour.</p></div>
+      </div>
+      <p class="contribution-note"><strong>Team contribution:</strong> This was built collaboratively. I’ll add a clear breakdown of my own responsibilities after confirming the details, rather than guessing or overstating anyone’s contribution.</p>
     </div>
+  </dialog>
 
-</section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 Aashish Shrestha · Built while learning.
-        </p>
-
-    </footer>
-
-    <!-- PROJECT DETAILS MODAL -->
-<div id="project-modal" class="project-modal">
-
-    <div class="project-modal-content">
-
-        <button id="close-project" class="close-project">✕</button>
-
-        <p>ROBOTICS · EMBEDDED SYSTEM · TEAM PROJECT</p>
-
-        <h2>Bluetooth Controlled Car</h2>
-
-        <p>
-            A smartphone-controlled robotic car developed as a team project
-            using Arduino Uno, HC-05 Bluetooth communication, an L298N motor
-            driver, DC motors, and a rechargeable battery system.
-        </p>
-
-        <h3>Project Gallery</h3>
-
-        <div class="project-gallery">
-
-            <img src="images/projects/bluetooth-car/project%202.jpeg"
-                 alt="Bluetooth Controlled Car">
-
-            <img src="images/projects/bluetooth-car/project%203.jpeg"
-                 alt="Bluetooth Controlled Car">
-
-        </div>
-
-        <h3>Components Used</h3>
-
-        <div class="component-list">
-            <span>Arduino Uno</span>
-            <span>HC-05 Bluetooth Module</span>
-            <span>L298N Motor Driver</span>
-            <span>HW-882 BMS</span>
-            <span>DC Motors</span>
-            <span>Li-ion Battery</span>
-            <span>LEDs & Resistors</span>
-        </div>
-
-        <h3>How It Works</h3>
-
-        <p>
-            Commands are sent from a smartphone through the HC-05 Bluetooth
-            module to the Arduino Uno. The Arduino processes the commands
-            and controls the L298N motor driver, which drives the DC motors
-            and moves the car.
-        </p>
-
-        <div class="project-flow">
-            Phone → HC-05 → Arduino Uno → L298N → DC Motors
-        </div>
-
-        <h3>Circuit Diagram</h3>
-
-        <img class="circuit-diagram"
-             src="images/projects/bluetooth-car/circuit%20diagram.png"
-             alt="Bluetooth Controlled Car Circuit Diagram">
-
-        <h3>What We Learned</h3>
-
-        <p>
-            This project helped us understand wireless communication,
-            Arduino programming, motor control, electronics, and the
-            conversion of electrical energy into mechanical motion.
-        </p>
-
-        <h3>Future Improvements</h3>
-
-        <p>
-            Possible improvements include adding sensors, obstacle
-            detection, a camera system, or autonomous driving features.
-        </p>
-
-    </div>
-
-</div>
-
-    <script src="script.js"></script>
-
+  <dialog class="lightbox-dialog" id="lightbox-dialog" aria-label="Enlarged project image">
+    <button class="icon-button lightbox-close" type="button" data-close-lightbox aria-label="Close enlarged image">✕</button>
+    <img id="lightbox-image" src="" alt="Enlarged project image">
+  </dialog>
+  <script src="script.js"></script>
 </body>
-
 </html>
