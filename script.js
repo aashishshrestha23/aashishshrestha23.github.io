@@ -1,75 +1,61 @@
-const themeButton = document.getElementById("theme-toggle");
+const root = document.documentElement;
+const themeButton = document.querySelector(".theme-toggle");
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const projectDialog = document.querySelector("#project-dialog");
+const lightboxDialog = document.querySelector("#lightbox-dialog");
+const lightboxImage = document.querySelector("#lightbox-image");
+
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  const dark = theme === "dark";
+  themeButton.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
+}
+setTheme(root.dataset.theme === "dark" ? "dark" : "light");
 
 themeButton.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-
-    if (soundEnabled) {
-        playClickSound();
-    }
+  setTheme(root.dataset.theme === "dark" ? "light" : "dark");
 });
-// Futuristic UI click sound
-function playClickSound() {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(700, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(
-        400,
-        audioContext.currentTime + 0.08
-    );
-
-    gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(
-        0.001,
-        audioContext.currentTime + 0.08
-    );
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.08);
+function closeMenu() {
+  navLinks.classList.remove("is-open");
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation");
 }
-// Sound toggle
-let soundEnabled = true;
-
-const soundButton = document.getElementById("sound-toggle");
-
-soundButton.addEventListener("click", () => {
-    soundEnabled = !soundEnabled;
-
-    soundButton.textContent = soundEnabled ? "🔊" : "🔇";
-
-    if (soundEnabled) {
-        playClickSound();
-    }
+menuButton.addEventListener("click", () => {
+  const open = menuButton.getAttribute("aria-expanded") !== "true";
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  navLinks.classList.toggle("is-open", open);
 });
-// Project details modal
-const projectButton = document.getElementById("project-btn");
-const projectModal = document.getElementById("project-modal");
-const closeProject = document.getElementById("close-project");
-
-projectButton.addEventListener("click", () => {
-    projectModal.style.display = "block";
+navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeMenu();
 });
 
-closeProject.addEventListener("click", () => {
-    projectModal.style.display = "none";
+function openProject() {
+  if (typeof projectDialog.showModal === "function") projectDialog.showModal();
+}
+document.querySelectorAll("[data-open-project]").forEach(button => {
+  button.addEventListener("click", openProject);
+});
+document.querySelector("[data-close-dialog]").addEventListener("click", () => projectDialog.close());
+projectDialog.addEventListener("click", event => {
+  if (event.target === projectDialog) projectDialog.close();
 });
 
-// Close when clicking outside the modal
-projectModal.addEventListener("click", (event) => {
-    if (event.target === projectModal) {
-        projectModal.style.display = "none";
-    }
+function openLightbox(src) {
+  lightboxImage.src = src;
+  lightboxDialog.showModal();
+}
+document.querySelectorAll("[data-lightbox]").forEach(button => {
+  button.addEventListener("click", () => openLightbox(button.dataset.lightbox));
 });
+document.querySelector("[data-close-lightbox]").addEventListener("click", () => lightboxDialog.close());
+lightboxDialog.addEventListener("click", event => {
+  if (event.target === lightboxDialog) lightboxDialog.close();
+});
+lightboxDialog.addEventListener("close", () => { lightboxImage.src = ""; });
 
-// Close with Escape key
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        projectModal.style.display = "none";
-    }
-});
+document.querySelector("#year").textContent = new Date().getFullYear();
