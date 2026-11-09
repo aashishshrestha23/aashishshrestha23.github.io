@@ -72,7 +72,7 @@ h1 em, h2 em, h3 em { color: var(--accent); font-style: normal; }
 .text-link span, .inline-link span { margin-left: 8px; color: var(--accent); }
 .hero-note { margin-top: 60px; color: var(--soft-muted); font-size: 10px; letter-spacing: .06em; }
 .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; background: #72946c; box-shadow: 0 0 0 4px rgba(114, 148, 108, .12); }
-.hero-visual { position: relative; width: min(100%, 450px); justify-self: end; padding: 24px 22px 35px 35px; }
+.hero-visual { position: relative; width: min(100%, 400px); justify-self: end; padding: 24px 22px 35px 35px; }
 .portrait-frame { position: relative; z-index: 1; aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-deep); box-shadow: var(--shadow); }
 .portrait-frame::before { position: absolute; z-index: 1; inset: 12px; border: 1px solid rgba(255,255,255,.5); content: ""; pointer-events: none; }
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
@@ -182,7 +182,7 @@ h1 em, h2 em, h3 em { color: var(--accent); font-style: normal; }
 @media (max-width: 900px) {
   .hero { min-height: 620px; gap: 35px; }
   .hero h1 { font-size: clamp(52px, 7vw, 72px); }
-  .hero-visual { width: min(100%, 350px); }
+  .hero-visual { width: min(100%, 320px); }
   .interest-grid { grid-template-columns: repeat(2, 1fr); }
   .journey-grid { gap: 55px; }
   .project-image-button { min-height: 390px; }
@@ -198,7 +198,7 @@ h1 em, h2 em, h3 em { color: var(--accent); font-style: normal; }
   .theme-toggle { width: 38px; height: 38px; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 34px; padding-top: 62px; padding-bottom: 88px; }
   .hero-copy { order: 2; }
-  .hero-visual { order: 1; width: min(78%, 310px); justify-self: center; margin-right: 10px; }
+  .hero-visual { order: 1; width: min(74%, 280px); justify-self: center; margin-right: 10px; }
   .hero h1 { font-size: clamp(52px, 13vw, 72px); }
   .hero-intro { font-size: 14px; }
   .hero-note { margin-top: 35px; }
