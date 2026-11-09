@@ -11,6 +11,7 @@ function setTheme(theme) {
   root.dataset.theme = theme;
   const dark = theme === "dark";
   themeButton.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  themeButton.title = dark ? "Switch to light theme" : "Switch to dark theme";
   try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
 }
 setTheme(root.dataset.theme === "dark" ? "dark" : "light");
@@ -30,7 +31,7 @@ function updateSoundButton() {
   soundButton.setAttribute("aria-pressed", String(soundEnabled));
   soundButton.setAttribute("aria-label", soundEnabled ? "Turn interface sounds off" : "Turn interface sounds on");
   soundButton.title = soundEnabled ? "Interface sounds on" : "Interface sounds off";
-  soundButton.innerHTML = soundEnabled ? '<span aria-hidden="true">♪</span>' : '<span aria-hidden="true">♩</span>';
+  soundButton.innerHTML = soundEnabled ? '<span class="sound-symbol" aria-hidden="true">♪</span><span class="sound-label">Sound on</span>' : '<span class="sound-symbol" aria-hidden="true">♩</span><span class="sound-label">Sound off</span>';
 }
 
 function playClickSound() {
