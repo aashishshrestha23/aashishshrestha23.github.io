@@ -23,6 +23,17 @@
       if (saved === "dark") document.documentElement.dataset.theme = "dark";
     } catch (_) {}
   </script>
+  <script>
+    // On refresh, start at the top rather than restoring an old scroll position.
+    // Hash links and normal back/forward navigation remain unaffected.
+    try {
+      const navigation = performance.getEntriesByType("navigation")[0];
+      if (navigation?.type === "reload" && !window.location.hash) {
+        history.scrollRestoration = "manual";
+        window.addEventListener("pageshow", () => window.scrollTo(0, 0), { once: true });
+      }
+    } catch (_) {}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
